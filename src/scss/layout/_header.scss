@@ -3,11 +3,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(90deg, $background 0%, $background 35%,rgb(245, 89, 37) 100%);
+  background-image: url("/assets/images/header.png");
+  background-size: contain;
+  height: 20rem;
+  width: 100%;
+  justify-content: space-between;
 
-  &__img {
-    height: auto;
-    width: 25rem;
+  &__title {
+    transform: translateY(110px);
+    font-family: "Kanit", sans-serif;
+    font-size: 4rem;
+    background-color: white;
+    color: rgba(232,183,170,255)
   }
 
   &__search {
@@ -52,10 +59,6 @@
 
 @media all and (min-width: 768px) {
   .header {
-    &__img {
-      width: 48rem;
-    }
-
     &__search {
       width: 48rem;
     }
@@ -64,10 +67,6 @@
 
 @media all and (min-width: 1200px) {
   .header {
-    &__img {
-      width: 70rem;
-    }
-
     &__search {
       width: 70rem;
     }

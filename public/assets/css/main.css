@@ -133,10 +133,17 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(90deg, #7aa73d 0%, #7aa73d 35%, #f55925 100%); }
-  .header__img {
-    height: auto;
-    width: 25rem; }
+  background-image: url("/assets/images/header.png");
+  background-size: contain;
+  height: 20rem;
+  width: 100%;
+  justify-content: space-between; }
+  .header__title {
+    transform: translateY(110px);
+    font-family: "Kanit", sans-serif;
+    font-size: 4rem;
+    background-color: white;
+    color: #e8b7aa; }
   .header__search {
     width: 25rem;
     padding: 10px;
@@ -148,13 +155,13 @@ table {
     padding: 5px;
     margin-right: 15px;
     width: 250px;
-    border: 3px solid rgba(91, 228, 226, 0.35);
+    border: 3px solid #e8b7aa;
     font-family: "Kanit", sans-serif; }
     .header__input:focus {
       outline: none;
-      border: 3px solid #7aa73d; }
+      border: 3px solid #b59c62; }
   .header__btn {
-    background-color: rgba(91, 228, 226, 0.35);
+    background-color: #e8b7aa;
     color: grey;
     border-style: none;
     padding: 7px;
@@ -163,19 +170,15 @@ table {
     font-family: "Kanit", sans-serif;
     transition: transform 1s; }
     .header__btn:hover {
-      background-color: rgba(75, 155, 154, 0.825);
+      background-color: #e8b796;
       color: white;
       transform: scale(1.2); }
 
 @media all and (min-width: 768px) {
-  .header__img {
-    width: 48rem; }
   .header__search {
     width: 48rem; } }
 
 @media all and (min-width: 1200px) {
-  .header__img {
-    width: 70rem; }
   .header__search {
     width: 70rem; } }
 
@@ -194,7 +197,7 @@ table {
   .allCharacters__title {
     margin-top: 20px;
     margin-bottom: 20px;
-    color: rgba(246, 214, 52, 0.875);
+    color: #e8b7aa;
     font-size: 24px;
     font-family: "Kanit", sans-serif; }
     .allCharacters__title--icon {
@@ -230,9 +233,9 @@ table {
     justify-content: center;
     gap: 20px; }
     .favsCharacters__list--article {
-      background-color: rgba(182, 34, 18, 0.875);
-      box-shadow: rgba(182, 34, 18, 0.875) 0px 0.0625em 0.0625em, rgba(182, 34, 18, 0.875) 0px 0.125em 0.5em, rgba(182, 34, 18, 0.875) 0px 0px 0px 1px inset;
-      border: 2px solid rgba(182, 34, 18, 0.875);
+      background-color: #e8b7aa;
+      box-shadow: #e8b7aa 0px 0.0625em 0.0625em, #e8b7aa 0px 0.125em 0.5em, #e8b7aa 0px 0px 0px 1px inset;
+      border: 2px solid #e8b7aa;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -243,9 +246,9 @@ table {
       padding: 10px;
       cursor: pointer; }
     .favsCharacters__list--articleBtn {
-      background-color: rgba(182, 34, 18, 0.875);
-      box-shadow: rgba(182, 34, 18, 0.875) 0px 0.0625em 0.0625em, rgba(182, 34, 18, 0.875) 0px 0.125em 0.5em, rgba(182, 34, 18, 0.875) 0px 0px 0px 1px inset;
-      border: 2px solid rgba(182, 34, 18, 0.875);
+      background-color: #e8b7aa;
+      box-shadow: #e8b7aa 0px 0.0625em 0.0625em, #e8b7aa 0px 0.125em 0.5em, #e8b7aa 0px 0px 0px 1px inset;
+      border: 2px solid #e8b7aa;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -257,7 +260,7 @@ table {
       cursor: pointer; }
   .favsCharacters__reset {
     width: 100px;
-    background-color: #7aa73d;
+    background-color: #b59c62;
     color: white;
     border-style: none;
     padding: 7px;
@@ -265,7 +268,7 @@ table {
     cursor: pointer;
     font-family: "Kanit", sans-serif; }
     .favsCharacters__reset:hover {
-      background-color: #bef07a;
+      background-color: #998555;
       color: white;
       transform: scale(1.2); }
 
