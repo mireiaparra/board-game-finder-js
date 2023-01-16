@@ -1,14 +1,14 @@
 "use strict";
 function paintFav(ev) {
   //Esto da el article padre del elemento sobre el que se haya hecho click
-  let favElement = ev.target.parentElement;
+  let favElement = ev.currentTarget.firstChild;
   favElement.classList.add("favsCharacters__list--article");
 
   //Encontrar el objeto que tenga el mismo id que el article sobre el que se ha hecho click
-  const findFav = characters.find((eachChar) => eachChar.char_id == parseInt(favElement.id));
+  const findFav = characters.find((eachChar) => eachChar.id === (favElement.id));
 
   //Encontrar la posición del objeto en el que he hecho click en el array de favoritos
-  const isFavIndex = favCharacters.findIndex((eachFav) => eachFav.char_id == parseInt(favElement.id));
+  const isFavIndex = favCharacters.findIndex((eachFav) => eachFav.id === (favElement.id));
 
   //Comprobar si el objeto NO estaba en el array y añadirlo o quitarlo si SÍ estaba
   if (isFavIndex === -1) {
@@ -56,16 +56,14 @@ function styleFav() {
 function handleClickRemove(ev) {
   ev.preventDefault();
   //Encontrar el article padre de la X en la que se hace click, encontrar el objeto con el mismo id de la lista de favoritos y eliminarlo
-  const isFavIndex = favCharacters.findIndex((eachFav) => eachFav.char_id == parseInt(ev.target.parentElement.id));
+  const isFavIndex = favCharacters.findIndex((eachFav) => eachFav.id === (ev.target.parentElement.id));
   favCharacters.splice(isFavIndex, 1);
 
-  //Encontrar el article padre de la X en la que se hace click, encontrar el article con el mismo id en la lista general y cambiarle el estilo
+  // //Encontrar el article padre de la X en la que se hace click, encontrar el article con el mismo id en la lista general y cambiarle el estilo
   const allLi = allList.children;
   const allLiArr = Array.prototype.slice.call(allLi);
-
-  const oldFavCharacterLi = allLiArr.find((eachLi) => eachLi.firstChild.id == parseInt(ev.target.parentElement.id));
+  const oldFavCharacterLi = allLiArr.find((eachLi) => eachLi.firstChild.id === (ev.target.parentElement.id));
   oldFavCharacterLi.firstChild.classList.remove("favsCharacters__list--article");
-
   updateFavList();
 }
 
@@ -73,8 +71,3 @@ function handleClickFav(ev) {
   ev.preventDefault();
   paintFav(ev);
 }
-
-logBtn.addEventListener('click', (ev) => {
-  ev.preventDefault();
-  console.log(`Tienes ${favCharacters.length} favoritos`);
-});
