@@ -7,10 +7,11 @@ function handleClickSearch(ev) {
     eachCharacter.name.toLowerCase().includes(searchInput.value.toLowerCase())
   );
   const searchCharactersStatus = characters.filter((eachCharacter) =>
-    eachCharacter.status.toLowerCase().includes(searchInput.value.toLowerCase())
+    eachCharacter.type.toLowerCase().includes(searchInput.value.toLowerCase())
   );
 
   let filteredCharacters = searchCharactersName.concat(searchCharactersStatus);
+  console.log(filteredCharacters.length)
 
   //Pintar los resultados
   allList.innerHTML = "";

@@ -20,10 +20,11 @@ function handleClickSearch(ev) {
     eachCharacter.name.toLowerCase().includes(searchInput.value.toLowerCase())
   );
   const searchCharactersStatus = characters.filter((eachCharacter) =>
-    eachCharacter.status.toLowerCase().includes(searchInput.value.toLowerCase())
+    eachCharacter.type.toLowerCase().includes(searchInput.value.toLowerCase())
   );
 
   let filteredCharacters = searchCharactersName.concat(searchCharactersStatus);
+  console.log(filteredCharacters.length)
 
   //Pintar los resultados
   allList.innerHTML = "";
@@ -199,10 +200,10 @@ function paintCharacters(charactersData, list, className) {
     const liElement = document.createElement("li");
     const articleElement = document.createElement("article");
     articleElement.classList.add(className);
-    articleElement.setAttribute("id", `${charactersData[i].char_id}`);
+    articleElement.setAttribute("id", `${charactersData[i].id}`);
 
     const imgElement = document.createElement("img");
-    imgElement.src = `${charactersData[i].img}`;
+    imgElement.src = `${charactersData[i].image_url}`;
     imgElement.alt = `Photo of ${charactersData[i].name}`;
     imgElement.style.height = "150px";
     imgElement.style.width = "120px";
@@ -219,14 +220,12 @@ function paintCharacters(charactersData, list, className) {
     const nameText = document.createTextNode(`${charactersData[i].name}`);
     titleElement.appendChild(nameText);
 
-    const statusText = document.createTextNode(`${charactersData[i].status}`);
+    const statusText = document.createTextNode(`${charactersData[i].type}`);
     textElement.appendChild(statusText);
 
-    const chAppArr = charactersData[i].appearance;
+    if (charactersData[i].player_counts){
+    const chAppArr = charactersData[i].player_counts;
     const chApp = chAppArr.join(",");
-
- 
-
     const ulApp = document.createElement("ul");
     const pApp = document.createElement("p");
 
@@ -235,23 +234,17 @@ function paintCharacters(charactersData, list, className) {
     ulApp.appendChild(pApp);
 
     articleElement.appendChild(ulApp);
-
-      if (chAppArr.length === 5) {
-      const allSeasons = document.createElement("p");
-      const allSeasonsText = document.createTextNode("Es un súperpersonaje")
-      allSeasons.appendChild(allSeasonsText);
-      articleElement.appendChild(allSeasons);
     }
   }
 }
 
 //Obtener los personajes de la API
 function getCharacters() {
-  fetch("./assets/data/characters.json")
+  fetch("https://api.boardgameatlas.com/api/search?order_by=popularity&client_id=fedCzdzOWG")
     .then((response) => response.json())
     .then((data) => {
-      characters = data;
-      paintCharacters(data, allList, "allCharacters__list--article");
+      characters = data.games;
+      paintCharacters(characters, allList, "allCharacters__list--article");
       const allListChildren = allList.children;
       setEventClick(allListChildren)
       paintLocalSt();
