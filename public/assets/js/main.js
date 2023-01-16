@@ -152,7 +152,7 @@ function paintLocalSt() {
     for (let i = 0; i < allCharactersLi.length; i++) {
       const eachArticle = allCharactersLi[i].firstChild;
     //Encontrar la posición de los objetos de favoritos que tengan un id igual a los articles de la lista general
-      const findArticleIndex = favCharacters.findIndex((eachChar) => eachChar.char_id == parseInt(eachArticle.id));
+      const findArticleIndex = favCharacters.findIndex((eachChar) => eachChar.id === (eachArticle.id));
 
       //Comprobar si el objeto está en el array de favoritos
       if (findArticleIndex !== -1) {
