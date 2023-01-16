@@ -1,0 +1,75 @@
+.header {
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(90deg, $background 0%, $background 35%,rgb(245, 89, 37) 100%);
+
+  &__img {
+    height: auto;
+    width: 25rem;
+  }
+
+  &__search {
+    width: 25rem;
+    padding: 10px;
+    background-color: white;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+  }
+
+  &__input {
+    padding: 5px;
+    margin-right: 15px;
+    width: 250px;
+    border: 3px solid $search;
+    font-family: $mainFont;
+
+    &:focus {
+      outline: none;
+      border: 3px solid $background;
+    }
+  }
+
+  &__btn {
+    background-color: $search;
+    color: grey;
+    border-style: none;
+    padding: 7px;
+    border-radius: 15%;
+    cursor: pointer;
+    font-family: $mainFont;
+    transition: transform 1s;
+
+    &:hover {
+    background-color: $searchHover;
+    color: white;
+    transform: scale(1.2);
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .header {
+    &__img {
+      width: 48rem;
+    }
+
+    &__search {
+      width: 48rem;
+    }
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .header {
+    &__img {
+      width: 70rem;
+    }
+
+    &__search {
+      width: 70rem;
+    }
+  }
+}

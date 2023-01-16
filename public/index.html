@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Evaluación Final Módulo 2 Mireia Maldonado</title>
+</head>
+<body>
+    <header class="header">
+        <img class="header__img" src="./assets/images/header.png" alt="Breaking bad photo"/>
+        <section class="header__search">
+            <form action="">
+            <label for="search"></label>
+            <input type="text" name="search" class="header__input js-searchInput" placeholder="Example: Walter White">
+            <button class="js-searchBtn header__btn">Search</button>
+            <button class="js-LogBtn">Log</button>
+        <section>
+        </form>
+    </header>
+  
+    <main class="js-main">
+        <section class="js-favSection hidden">
+            <h2 class="allCharacters__title">Favorites <img class="allCharacters__title--icon" src="./assets/images/favCharactersIcon.png" alt="chemistry heart shape"></h2>
+            <ul class="js-favCharactersList favsCharacters__list"></ul>
+        </section>
+        <section class="allCharacters">
+            <h2 class="allCharacters__title">Characters <img class="allCharacters__title--icon" src="./assets/images/charactersIcon.png" alt="chemistry"></h2>
+            <ul class="allCharacters__list js-allCharactersList"></ul>
+        </section>
+    </main>
+ 
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

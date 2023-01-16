@@ -1,0 +1,76 @@
+.hidden {
+  display: none;
+}
+.favsCharacters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__list {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px;
+
+    &--article {
+     background-color: $favsBackground;
+      box-shadow: $favsBackground 0px 0.0625em 0.0625em, $favsBackground 0px 0.125em 0.5em, $favsBackground 0px 0px 0px 1px inset;
+      border: 2px solid $favsBackground;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 5px;
+      width: 150px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    &--articleBtn {
+      background-color: $favsBackground;
+      box-shadow: $favsBackground 0px 0.0625em 0.0625em, $favsBackground 0px 0.125em 0.5em, $favsBackground 0px 0px 0px 1px inset;
+      border: 2px solid $favsBackground;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 5px;
+      width: 150px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+  &__reset {
+    width: 100px;
+    background-color: $background;
+    color: white;
+    border-style: none;
+    padding: 7px;
+    border-radius: 10%;
+    cursor: pointer;
+    font-family: $mainFont;
+
+    &:hover {
+      background-color: $removeHover;
+      color: white;
+      transform: scale(1.2);
+      }
+  }
+}
+
+.removeFav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 60%;
+  background-color: rgba(217, 209, 209, 0.882);
+  font-size: 12px;
+  color: white;
+}
+
+
