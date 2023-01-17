@@ -1,5 +1,5 @@
 ![Board game](./src/images/header.png)
-# Borad games finder (Javascript)
+# Board games finder (Javascript)
 This is my Board games project built with Javascript, HTML & Sass. Here you'll find more about it and how to use it.
 
 ## Description
