@@ -8,12 +8,13 @@ function removeLocalSt() {
 
 function paintLocalSt() {
   //Mostrar elementos favoritos desde el LS si existe
-  if (favsLocal !== null && favsLocal !== []) {
+  if (favsLocal !== null && favsLocal.length > 0) {
     favSection.classList.remove("hidden");
     favSection.classList.add("favsCharacters");
     favCharacters = favsLocal;
     paintCharacters(favsLocal, favList, "favsCharacters__list--articleBtn");
     styleFav();
+    askRate();
 
     const allCharactersLi = allList.children;
 

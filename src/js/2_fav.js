@@ -34,6 +34,7 @@ function updateFavList() {
     favSection.classList.remove("hidden");
     favSection.classList.add("favsCharacters");
     paintCharacters(favCharacters, favList, "favsCharacters__list--articleBtn");
+    askRate();
     styleFav();
     setLocalSt();
   }
