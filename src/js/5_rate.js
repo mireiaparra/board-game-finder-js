@@ -1,15 +1,10 @@
 function askRate() {
-    const favBoardGamesNL = document.querySelectorAll(".favsCharacters__list--articleBtn");
+    const favBoardGamesNL = document.querySelectorAll(".favsBoardGames__list--articleBtn");
     const favBoardGames = Array.from(favBoardGamesNL);
-    console.log(favCharacters[0].id);
-    console.log(favBoardGames[0].id);
     
     for (const eachArticle of favBoardGames) {
    
-        const eachFiltered = favCharacters.find((eachBoardGame) => eachArticle.id === eachBoardGame.id);
-        console.log(eachFiltered);
-
-
+        const eachFiltered = favBoardGames.find((eachBoardGame) => eachArticle.id === eachBoardGame.id);
         if(eachFiltered.rate !== undefined && eachFiltered.rate !== null) {
             const rateTextEl = document.createElement("p");
             const rateText = document.createTextNode(eachFiltered.rate);

@@ -1,16 +1,16 @@
 "use strict";
 
 //Función base para pintar los elementos de las listas con DOM avanzado
-function paintCharacters(charactersData, list, className) {
-  for (let i = 0; i < charactersData.length; i++) {
+function paintBoardGames(BoardGamesData, list, className) {
+  for (let i = 0; i < BoardGamesData.length; i++) {
     const liElement = document.createElement("li");
     const articleElement = document.createElement("article");
     articleElement.classList.add(className);
-    articleElement.setAttribute("id", `${charactersData[i].id}`);
+    articleElement.setAttribute("id", `${BoardGamesData[i].id}`);
 
     const imgElement = document.createElement("img");
-    imgElement.src = `${charactersData[i].image_url}`;
-    imgElement.alt = `Photo of ${charactersData[i].name}`;
+    imgElement.src = `${BoardGamesData[i].image_url}`;
+    imgElement.alt = `Photo of ${BoardGamesData[i].name}`;
     imgElement.style.height = "150px";
     imgElement.style.width = "120px";
     articleElement.appendChild(imgElement);
@@ -23,14 +23,14 @@ function paintCharacters(charactersData, list, className) {
     liElement.appendChild(articleElement);
     list.appendChild(liElement);
 
-    const nameText = document.createTextNode(`${charactersData[i].name}`);
+    const nameText = document.createTextNode(`${BoardGamesData[i].name}`);
     titleElement.appendChild(nameText);
 
-    const statusText = document.createTextNode(`${charactersData[i].type}`);
+    const statusText = document.createTextNode(`${BoardGamesData[i].type}`);
     textElement.appendChild(statusText);
 
-    if (charactersData[i].player_counts){
-    const chAppArr = charactersData[i].player_counts;
+    if (BoardGamesData[i].player_counts){
+    const chAppArr = BoardGamesData[i].player_counts;
     const chApp = chAppArr.join(",");
     const ulApp = document.createElement("ul");
     const pApp = document.createElement("p");
@@ -45,12 +45,12 @@ function paintCharacters(charactersData, list, className) {
 }
 
 //Obtener los personajes de la API
-function getCharacters() {
+function getBoardGames() {
   fetch("https://api.boardgameatlas.com/api/search?order_by=popularity&client_id=fedCzdzOWG")
     .then((response) => response.json())
     .then((data) => {
-      characters = data.games;
-      paintCharacters(characters, allList, "allCharacters__list--article");
+      BoardGames = data.games;
+      paintBoardGames(BoardGames, allList, "allBoardGames__list--article");
       const allListChildren = allList.children;
       setEventClick(allListChildren)
       paintLocalSt();
@@ -64,5 +64,5 @@ function setEventClick(list){
 }
 
 // Al cargar la página
-getCharacters();
+getBoardGames();
 createReset();
